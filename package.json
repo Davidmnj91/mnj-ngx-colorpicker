@@ -7,7 +7,7 @@
     "build": "npm run build:lib && npm run build:app",
     "build:lib": "ng build mnj-ngx-colorpicker && npm run build:lib:scss && npm run copy:readme",
     "build:lib:scss": "scss-bundle -c scss-bundle.config.json",
-    "build:app": "ng build app --base-href='https://davidmnj91.github.io/mnj-colorpicker/'",
+    "build:app": "ng build app --base-href='https://davidmnj91.github.io/mnj-ngx-colorpicker/'",
     "test": "ng test",
     "test:lib-coverage": "ng test mnj-ngx-colorpicker --code-coverage --watch=false",
     "lint": "ng lint",
