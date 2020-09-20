@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "copy:readme": "copyfiles ./README.md ./dist/mnj-ngx-colorpicker",
     "build": "npm run build:lib && npm run build:app",
     "build:lib": "ng build mnj-ngx-colorpicker && npm run build:lib:scss && npm run copy:readme",
     "build:lib:scss": "scss-bundle -c scss-bundle.config.json",
@@ -15,13 +16,12 @@
     "format:check": "prettier --list-different 'projects/**/*.ts'",
     "format:write": "prettier --write 'projects/**/*.ts'",
     "report-coverage:lib": "cat ./coverage/mnj-ngx-colorpicker/lcov.info | codecov",
-    "publish:demo": "npx angular-cli-ghpages --dir=./dist/mnj-ngx-colorpicker",
-    "copy:readme": "copyfiles ./README.md ./dist/mnj-ngx-colorpicker",
-    "semantic-release": "semantic-release",
-    "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+    "publish:demo": "npx angular-cli-ghpages --dir=./dist/app",
+    "publish:lib": "npx semantic-release",
     "adjust-version": "npm-run-all adjust-version:*",
     "adjust-version:lib": "rjp projects/mnj-ngx-colorpicker/package.json version $VERSION",
-    "adjust-version:main": "rjp package.json version $VERSION"
+    "adjust-version:main": "rjp package.json version $VERSION",
+    "semantic-release": "semantic-release"
   },
   "private": true,
   "dependencies": {
@@ -79,20 +79,21 @@
     "tslint": "~6.1.0",
     "typescript": "~3.9.5"
   },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
-  },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
   "lint-staged": {
     "projects/**/*.ts": [
       "prettier --write",
       "git add"
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
     ]
   },
   "repository": {
