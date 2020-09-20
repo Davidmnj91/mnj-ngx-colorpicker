@@ -1,0 +1,17 @@
+<ul class="mnj-grid-selector__row" [style]="gridStyle()">
+  <li
+    class="mnj-grid-selector__row--cell"
+    *ngFor="let cell of grid"
+    [title]="cell.title"
+    [attr.tabIndex]="cell.active ? 0 : -1"
+    [attr.aria-label]="cell.title"
+    [attr.aria-selected]="cell.active"
+    [style.background]="cssColor(cell.color)"
+    [style]="cellSize()"
+    (click)="selectColor(cell)"
+  >
+    <div *ngIf="cell.active" class="mnj-colorpicker-selector__thumb" [style]="thumbSize()">
+      <div class="mnj-colorpicker-selector__thumb__inner"></div>
+    </div>
+  </li>
+</ul>

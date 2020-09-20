@@ -1,0 +1,14 @@
+<mnj-color-panel
+  cdkTrapFocus
+  [id]="colorpicker.id"
+  [ngClass]="colorpicker.panelClass"
+  [color]="colorpicker.color"
+  [startView]="colorpicker.startView"
+  [startColor]="colorpicker.startColor"
+  [showAlpha]="colorpicker.showAlpha"
+  [palette]="colorpicker.palette"
+  [selected]="_getSelected()"
+  [@fadeInColorPanel]="'enter'"
+  (_userSelection)="_handleUserSelection($event)"
+>
+</mnj-color-panel>

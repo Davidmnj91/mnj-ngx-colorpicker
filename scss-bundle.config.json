@@ -1,0 +1,7 @@
+{
+  "bundlerOptions": {
+    "entryFile": "./projects/mnj-ngx-colorpicker/src/lib/colorpicker.theme.scss",
+    "rootDir": "./",
+    "outFile": "dist/mnj-ngx-colorpicker/colorpicker.theme.scss"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/mnj-ngx-colorpicker",
+  "lib": {
+    "entryFile": "src/lib/public-api.ts"
+  }
+}

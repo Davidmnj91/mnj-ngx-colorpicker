@@ -1,0 +1,182 @@
+@import '~@angular/material/core/style/elevation';
+@import '~@angular/material/core/theming/palette';
+@import '~@angular/material/core/theming/theming';
+@import '~@angular/material/core/theming/check-duplicate-styles';
+@import '~@angular/material/core/typography/typography-utils';
+
+$mnj-colorpicker-selected-fade-amount: 0.6;
+$mnj-colorpicker-today-fade-amount: 0.2;
+$mnj-color-panel-body-font-size: 13px !default;
+
+@mixin _mnj-colorpicker-color($palette) {
+  .mnj-input-selector {
+    .color-input:focus {
+      border-bottom-color: mat-color($palette);
+    }
+  }
+}
+
+@mixin _mnj-color-view-theme($config) {
+  $foreground: map-get($config, foreground);
+
+  .mnj-armonies-picker-view {
+    label {
+      color: mat-color($foreground, text);
+    }
+  }
+
+  .mnj-scan-picker-view {
+    .upload-control {
+      border-color: mat-color($foreground, icon);
+    }
+  }
+}
+
+@mixin _mnj-color-selector-theme($config) {
+  $foreground: map-get($config, foreground);
+  $background: map-get($config, background);
+
+  .mnj-colorpicker-selector {
+    &:focus {
+      .mnj-colorpicker-selector__thumb__inner {
+        $opacity: 0.2;
+        $color: mat-color($foreground, icon, $opacity);
+        $base-container-thumb-inner-focus-shadow: 0 0 0px 8px $color;
+
+        box-shadow: $base-container-thumb-inner-focus-shadow;
+      }
+    }
+  }
+  .mnj-colorpicker-selector__thumb {
+    $opacity: 0.08;
+
+    border-color: mat-color($foreground, text, $opacity);
+
+    .mnj-colorpicker-selector__thumb__inner {
+      border-color: mat-color($foreground, text);
+
+      &::after {
+        border-color: mat-color($foreground, text, $opacity);
+      }
+    }
+  }
+
+  .mnj-input-selector {
+    .color-input {
+      background-color: mat-color($background, card);
+      color: mat-color($foreground, text);
+      border-bottom-color: mat-color($foreground, text);
+    }
+
+    .switch-buttons--prev,
+    .switch-buttons--next {
+      svg {
+        fill: mat-color($foreground, text);
+      }
+    }
+  }
+}
+
+@mixin mnj-colorpicker-color($config-or-theme) {
+  $config: mat-get-color-config($config-or-theme);
+  $foreground: map-get($config, foreground);
+  $background: map-get($config, background);
+  $disabled-color: mat-color($foreground, disabled-text);
+
+  .mnj-color-panel-arrow {
+    border-top-color: mat-color($foreground, icon);
+  }
+
+  // The prev/next buttons need a bit more specificity to
+  // avoid being overwritten by the .mat-icon-button.
+  .mnj-colorpicker-toggle,
+  .mnj-colorpicker-content .mnj-color-panel-next-button,
+  .mnj-colorpicker-content .mnj-color-panel-previous-button {
+    color: mat-color($foreground, icon);
+  }
+
+  .mnj-color-panel-body-label {
+    color: mat-color($foreground, secondary-text);
+  }
+
+  .mat-form-field-disabled {
+    color: $disabled-color;
+  }
+
+  .mnj-colorpicker-content {
+    @include _mat-theme-elevation(4, $config);
+    background-color: mat-color($background, card);
+    color: mat-color($foreground, text);
+
+    @include _mnj-color-selector-theme($config);
+
+    @include _mnj-color-view-theme($config);
+
+    @include _mnj-colorpicker-color(map-get($config, primary));
+
+    &.mat-accent {
+      @include _mnj-colorpicker-color(map-get($config, accent));
+    }
+
+    &.mat-warn {
+      @include _mnj-colorpicker-color(map-get($config, warn));
+    }
+  }
+
+  .mnj-colorpicker-content-touch {
+    @include _mat-theme-elevation(0, $config);
+  }
+
+  .mnj-colorpicker-toggle-active {
+    color: mat-color(map-get($config, primary), text);
+
+    &.mat-accent {
+      color: mat-color(map-get($config, accent), text);
+    }
+
+    &.mat-warn {
+      color: mat-color(map-get($config, warn), text);
+    }
+  }
+}
+
+@mixin mnj-colorpicker-typography($config-or-theme) {
+  $config: mat-get-typography-config($config-or-theme);
+  .mnj-color-panel {
+    font-family: mat-font-family($config);
+  }
+
+  .mnj-color-panel-body {
+    font-size: $mnj-color-panel-body-font-size;
+  }
+
+  .mnj-color-panel-body-label,
+  .mnj-color-panel-period-button {
+    font: {
+      size: mat-font-size($config, button);
+      weight: mat-font-weight($config, button);
+    }
+  }
+}
+
+@mixin _mnj-colorpicker-density($config-or-theme) {
+}
+
+@mixin mnj-colorpicker-theme($theme-or-color-config) {
+  $theme: _mat-legacy-get-theme($theme-or-color-config);
+  @include _mat-check-duplicate-theme-styles($theme, 'mnj-colorpicker') {
+    $color: mat-get-color-config($theme);
+    $density: mat-get-density-config($theme);
+    $typography: mat-get-typography-config($theme);
+
+    @if $color != null {
+      @include mnj-colorpicker-color($color);
+    }
+    @if $density != null {
+      @include _mnj-colorpicker-density($density);
+    }
+    @if $typography != null {
+      @include mnj-colorpicker-typography($typography);
+    }
+  }
+}

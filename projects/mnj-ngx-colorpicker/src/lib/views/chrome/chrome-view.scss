@@ -1,0 +1,13 @@
+@import '../common-view.scss';
+
+.mnj-chrome-picker-view {
+  @extend %common-view;
+
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  .mnj-saturation-selector {
+    flex: 1 0 auto;
+  }
+}

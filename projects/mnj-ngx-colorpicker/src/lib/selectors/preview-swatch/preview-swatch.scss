@@ -1,0 +1,27 @@
+$swatch-size: 24px;
+
+.mnj-preview-swatch {
+  .swatch__container {
+    border-radius: 50%;
+    width: $swatch-size;
+    height: $swatch-size;
+    cursor: default;
+
+    &--color-layer,
+    &--alpha-layer {
+      border-radius: 50%;
+      width: $swatch-size;
+      height: $swatch-size;
+    }
+
+    &--alpha-layer {
+      background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAI0lEQVQoU2PcvXv3TAYk4Orqmo7MZ6SDAmT7QGx0KxlprwAAw9kbMStVZ6AAAAAASUVORK5CYII=')
+        repeat;
+      background-position: left top;
+    }
+
+    &--color-layer {
+      transform: translateY(-$swatch-size);
+    }
+  }
+}

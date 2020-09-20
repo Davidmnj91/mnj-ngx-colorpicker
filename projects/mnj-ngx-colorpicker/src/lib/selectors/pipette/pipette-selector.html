@@ -1,0 +1,14 @@
+<canvas #imageCanvas></canvas>
+<div *ngIf="showPipetteSwatch" class="mnj-pipette-selector__swatch-container" [ngStyle]="swatchGridPos">
+  <div class="mnj-pipette-selector__swatch-container__grid" [ngStyle]="swatchGridStyle">
+    <div
+      class="mnj-pipette-selector__swatch-container--cell"
+      *ngFor="let swatch of pipetteSwatchPalette; let i = index"
+      [style.background]="getPixelBackground(swatch)"
+      [class.mnj-pipette-selector__swatch-container--cell--active]="i === _swatchMiddle"
+    ></div>
+  </div>
+</div>
+<div class="mnj-colorpicker-selector__thumb" [ngStyle]="canvasThumbPos">
+  <div class="mnj-colorpicker-selector__thumb__inner"></div>
+</div>

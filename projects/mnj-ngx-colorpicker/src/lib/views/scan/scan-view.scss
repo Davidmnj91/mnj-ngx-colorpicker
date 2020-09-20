@@ -1,0 +1,33 @@
+@import '../common-view.scss';
+
+.mnj-scan-picker-view {
+  @extend %common-view;
+
+  display: block;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+
+  .mnj-pipette-selector {
+    height: calc(100% - 50px);
+  }
+
+  .upload-control {
+    border: 2px dashed currentColor;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+
+    &--fileInput {
+      display: none;
+    }
+
+    &--fab {
+      position: absolute;
+      right: -8px;
+      top: -8px;
+    }
+  }
+}

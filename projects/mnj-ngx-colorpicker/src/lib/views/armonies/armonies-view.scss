@@ -1,0 +1,20 @@
+.mnj-armonies-picker-view {
+  display: flex;
+  flex-flow: column;
+
+  label {
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+
+  .mnj-grid-selector {
+    &__row--cell {
+      height: 20px;
+      width: 20px;
+    }
+    &__thumb {
+      height: 16px;
+      width: 16px;
+    }
+  }
+}

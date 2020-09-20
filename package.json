@@ -1,35 +1,66 @@
 {
   "name": "mnj-ngx-colorpicker",
-  "version": "0.0.0",
+  "version": "0.0.0-development",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "npm run build:lib && npm run build:app",
+    "build:lib": "ng build mnj-ngx-colorpicker && npm run build:lib:scss && npm run copy:readme",
+    "build:lib:scss": "scss-bundle -c scss-bundle.config.json",
+    "build:app": "ng build app --base-href='https://davidmnj91.github.io/mnj-colorpicker/'",
     "test": "ng test",
+    "test:lib-coverage": "ng test mnj-ngx-colorpicker --code-coverage --watch=false",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "format:check": "prettier --list-different 'projects/**/*.ts'",
+    "format:write": "prettier --write 'projects/**/*.ts'",
+    "report-coverage:lib": "cat ./coverage/mnj-ngx-colorpicker/lcov.info | codecov",
+    "publish:demo": "npx angular-cli-ghpages --dir=./dist/mnj-ngx-colorpicker",
+    "copy:readme": "copyfiles ./README.md ./dist/mnj-ngx-colorpicker",
+    "semantic-release": "semantic-release",
+    "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+    "adjust-version": "npm-run-all adjust-version:*",
+    "adjust-version:lib": "rjp projects/mnj-ngx-colorpicker/package.json version $VERSION",
+    "adjust-version:main": "rjp package.json version $VERSION"
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "~10.0.6",
-    "@angular/common": "~10.0.6",
-    "@angular/compiler": "~10.0.6",
-    "@angular/core": "~10.0.6",
-    "@angular/forms": "~10.0.6",
-    "@angular/platform-browser": "~10.0.6",
-    "@angular/platform-browser-dynamic": "~10.0.6",
-    "@angular/router": "~10.0.6",
-    "rxjs": "~6.5.5",
+    "@angular/animations": "~10.1.2",
+    "@angular/cdk": "^10.2.1",
+    "@angular/common": "~10.1.2",
+    "@angular/compiler": "~10.1.2",
+    "@angular/core": "~10.1.2",
+    "@angular/flex-layout": "^10.0.0-beta.32",
+    "@angular/forms": "~10.1.2",
+    "@angular/material": "^10.2.1",
+    "@angular/platform-browser": "~10.1.2",
+    "@angular/platform-browser-dynamic": "~10.1.2",
+    "@angular/router": "~10.1.2",
+    "material-design-icons": "^3.0.1",
+    "rxjs": "~6.6.3",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.3"
   },
   "devDependencies": {
-    "@angular/cli": "~10.0.5",
-    "@angular/compiler-cli": "~10.0.6",
-    "@types/node": "^12.11.1",
+    "@angular-devkit/build-angular": "~0.1001.2",
+    "@angular-devkit/build-ng-packagr": "~0.1001.2",
+    "@angular/cli": "~10.1.2",
+    "@angular/compiler-cli": "~10.1.2",
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "@commitlint/prompt": "^11.0.0",
+    "@semantic-release/exec": "^5.0.0",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
+    "@types/node": "^12.11.1",
+    "@typescript-eslint/eslint-plugin": "^3.10.1",
     "codelyzer": "^6.0.0",
+    "copyfiles": "^2.3.0",
+    "eslint": "6.8.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.3.0",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~5.0.0",
     "karma": "~5.0.0",
@@ -37,9 +68,35 @@
     "karma-coverage-istanbul-reporter": "~3.0.2",
     "karma-jasmine": "~3.3.0",
     "karma-jasmine-html-reporter": "^1.5.0",
+    "lint-staged": "^10.4.0",
+    "ng-packagr": "^10.0.0",
+    "prettier": "^2.1.1",
+    "prettier-eslint": "^11.0.0",
     "protractor": "~7.0.0",
+    "scss-bundle": "^3.1.2",
+    "semantic-release": "^17.1.2",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
     "typescript": "~3.9.5"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "projects/**/*.ts": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Davidmnj91/mnj-ngx-colorpicker.git"
   }
 }

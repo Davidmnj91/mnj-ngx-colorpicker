@@ -1,0 +1,62 @@
+@import '~@angular/material/core/style/layout-common';
+
+$mnj-color-panel-prev-next-icon-border-width: 2px;
+$mnj-color-panel-prev-icon-transform: translateY(4px) rotate(45deg);
+$mnj-color-panel-next-icon-transform: translateY(4px) rotate(135deg);
+
+.mnj-input-selector {
+  width: 100%;
+
+  &__container {
+    display: flex;
+    grid-gap: 5px;
+
+    .color-input {
+      border: none;
+      border-bottom: 1px solid currentColor;
+      flex: 1 0 auto;
+      font-size: inherit;
+      height: 24px;
+      padding: 6px 8px 6px 8px;
+      text-transform: uppercase;
+
+      &:focus {
+        border-bottom: 1px solid currentColor;
+        outline: none;
+      }
+    }
+
+    &__switch-buttons {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+
+      .switch-buttons--prev,
+      .switch-buttons--next {
+        position: relative;
+        width: 10px;
+        height: 10px;
+
+        &::after {
+          @include mat-fill;
+          content: '';
+          border: 0 solid currentColor;
+          border-top-width: $mnj-color-panel-prev-next-icon-border-width;
+        }
+
+        [dir='rtl'] & {
+          transform: rotate(180deg);
+        }
+      }
+      .switch-buttons--prev::after {
+        border-left-width: $mnj-color-panel-prev-next-icon-border-width;
+        transform: $mnj-color-panel-prev-icon-transform;
+      }
+
+      .switch-buttons--next::after {
+        border-right-width: $mnj-color-panel-prev-next-icon-border-width;
+        transform: $mnj-color-panel-next-icon-transform;
+      }
+    }
+  }
+}

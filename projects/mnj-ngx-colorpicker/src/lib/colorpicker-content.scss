@@ -1,0 +1,52 @@
+$mnj-colorpicker-non-touch-content-width: 350px;
+$mnj-colorpicker-non-touch-content-height: 400px;
+
+$mnj-colorpicker-touch-landscape-width: 64vh;
+$mnj-colorpicker-touch-landscape-height: 80vh;
+$mnj-colorpicker-touch-portrait-width: 80vw;
+$mnj-colorpicker-touch-portrait-height: 100vw;
+$mnj-colorpicker-touch-min-width: 250px;
+$mnj-colorpicker-touch-min-height: 312px;
+$mnj-colorpicker-touch-max-width: 750px;
+$mnj-colorpicker-touch-max-height: 788px;
+
+.mnj-colorpicker-content {
+  display: flex;
+  border-radius: 4px;
+  flex-direction: column;
+
+  .mnj-color-panel {
+    height: $mnj-colorpicker-non-touch-content-height;
+    width: $mnj-colorpicker-non-touch-content-width;
+  }
+}
+
+.mnj-colorpicker-content-touch {
+  display: flex;
+  flex-direction: column;
+  // make sure the dialog scrolls rather than being cropped on ludicrously small screens
+  max-height: 80vh;
+  overflow: auto;
+  margin: -24px;
+
+  .mnj-color-panel {
+    min-width: $mnj-colorpicker-touch-min-width;
+    min-height: $mnj-colorpicker-touch-min-height;
+    max-width: $mnj-colorpicker-touch-max-width;
+    max-height: $mnj-colorpicker-touch-max-height;
+  }
+}
+
+@media all and (orientation: landscape) {
+  .mnj-colorpicker-content-touch .mnj-color-panel {
+    width: $mnj-colorpicker-touch-landscape-width;
+    height: $mnj-colorpicker-touch-landscape-height;
+  }
+}
+
+@media all and (orientation: portrait) {
+  .mnj-colorpicker-content-touch .mnj-color-panel {
+    width: $mnj-colorpicker-touch-portrait-width;
+    height: $mnj-colorpicker-touch-portrait-height;
+  }
+}

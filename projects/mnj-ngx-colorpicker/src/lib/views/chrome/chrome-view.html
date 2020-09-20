@@ -1,0 +1,17 @@
+<mnj-grid-selector
+  cdkFocusInitial
+  [color]="activeColor"
+  [paletteGeneratorFn]="colorShadesFn"
+  (colorSelected)="changeColor($event)"
+></mnj-grid-selector>
+<mnj-saturation-selector [color]="activeColor" (satChange)="changeColor($event)"></mnj-saturation-selector>
+<mnj-hue-selector [color]="activeColor" (hueChange)="changeColor($event)"></mnj-hue-selector>
+<mnj-alpha-selector *ngIf="showAlpha" [color]="activeColor" (alphaChange)="changeColor($event)"></mnj-alpha-selector>
+<div class="controls-container">
+  <mnj-preview-swatch [color]="activeColor"></mnj-preview-swatch>
+  <mnj-input-selector
+    class="controls-container--input"
+    [color]="activeColor"
+    (inputChange)="changeColor($event)"
+  ></mnj-input-selector>
+</div>

@@ -1,0 +1,59 @@
+<label>Complementary:</label>
+<mnj-grid-selector
+  [color]="activeColor"
+  [paletteGeneratorFn]="complementaryPaletteFn"
+  (colorSelected)="changeColor($event)"
+></mnj-grid-selector>
+
+<label>Split Complementary:</label>
+<mnj-grid-selector
+  [color]="activeColor"
+  [paletteGeneratorFn]="splitComplementaryPaletteFn"
+  (colorSelected)="changeColor($event)"
+></mnj-grid-selector>
+<mnj-grid-selector
+  [color]="activeColor"
+  [paletteGeneratorFn]="splitComplementaryPaletteFn1"
+  (colorSelected)="changeColor($event)"
+></mnj-grid-selector>
+
+<label>Analogous:</label>
+<mnj-grid-selector
+  [color]="activeColor"
+  [paletteGeneratorFn]="analogous1PaletteFn"
+  (colorSelected)="changeColor($event)"
+></mnj-grid-selector>
+<mnj-grid-selector
+  [color]="activeColor"
+  [paletteGeneratorFn]="analogous2PaletteFn"
+  (colorSelected)="changeColor($event)"
+></mnj-grid-selector>
+
+<label>Triadic:</label>
+<mnj-grid-selector
+  [color]="activeColor"
+  [paletteGeneratorFn]="triadic1PaletteFn"
+  (colorSelected)="changeColor($event)"
+></mnj-grid-selector>
+<mnj-grid-selector
+  [color]="activeColor"
+  [paletteGeneratorFn]="triadic2PaletteFn"
+  (colorSelected)="changeColor($event)"
+></mnj-grid-selector>
+
+<label>Tetradic:</label>
+<mnj-grid-selector
+  [color]="activeColor"
+  [paletteGeneratorFn]="tetradic1PaletteFn"
+  (colorSelected)="changeColor($event)"
+></mnj-grid-selector>
+<mnj-grid-selector
+  [color]="activeColor"
+  [paletteGeneratorFn]="tetradic2PaletteFn"
+  (colorSelected)="changeColor($event)"
+></mnj-grid-selector>
+<mnj-grid-selector
+  [color]="activeColor"
+  [paletteGeneratorFn]="tetradic3PaletteFn"
+  (colorSelected)="changeColor($event)"
+></mnj-grid-selector>

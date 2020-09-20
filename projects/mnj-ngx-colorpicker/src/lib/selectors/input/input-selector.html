@@ -1,0 +1,25 @@
+<div class="mnj-input-selector__container">
+  <input
+    #colorInput
+    class="color-input"
+    type="text"
+    autocorrect="off"
+    autocomplete="off"
+    spellcheck="false"
+    aria-label="Color code"
+    [value]="colorString"
+    (change)="changeColor($event)"
+  />
+  <div class="mnj-input-selector__container__switch-buttons">
+    <span class="switch-buttons--prev" (click)="previousFormat()">
+      <!-- <svg xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 24 24">
+        <path d="M23.25 20L12 5.63.78 20 0 19.38 12 4l12 15.4-.76.6z" />
+      </svg> -->
+    </span>
+    <span class="switch-buttons--next" (click)="nextFormat()">
+      <!-- <svg xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 24 24">
+        <path d="M23.25 4L12 18.37.78 4 0 4.62 12 20 24 4.6l-.76-.6z" />
+      </svg> -->
+    </span>
+  </div>
+</div>

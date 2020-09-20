@@ -1,0 +1,105 @@
+@import '~@angular/material/core/style/layout-common';
+
+$mnj-color-panel-padding-y: 9px !default;
+$mnj-color-panel-padding-x: 16px !default;
+$mnj-color-panel-controls-vertical-padding: 5%;
+
+// We use the same padding as the month / year label, but subtract 16px since there is padding
+// between the edge of the button and the text. This ensures that the button text lines up with
+// the month / year label text.
+$mnj-color-panel-controls-side-margin: calc(33% / 7 - 16px);
+
+$mnj-color-panel-arrow-size: 5px !default;
+
+// Values chosen to approximate https://material.io/icons/#ic_navigate_before and
+// https://material.io/icons/#ic_navigate_next as closely as possible.
+$mnj-color-panel-prev-next-icon-border-width: 2px;
+$mnj-color-panel-prev-next-icon-margin: 15.5px;
+$mnj-color-panel-prev-icon-transform: translateX(2px) rotate(-45deg);
+$mnj-color-panel-next-icon-transform: translateX(-2px) rotate(45deg);
+
+.mnj-color-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.mnj-color-panel-header {
+  padding: $mnj-color-panel-padding-y $mnj-color-panel-padding-x 0 $mnj-color-panel-padding-x;
+}
+
+.mnj-color-panel-content {
+  flex: 1 0 0;
+  outline: none;
+  overflow-y: auto;
+  padding: $mnj-color-panel-padding-y $mnj-color-panel-padding-x;
+}
+
+.mnj-color-panel-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 $mnj-color-panel-padding-x $mnj-color-panel-padding-y;
+}
+
+.mnj-color-panel-controls {
+  display: flex;
+  margin: $mnj-color-panel-controls-vertical-padding $mnj-color-panel-controls-side-margin;
+
+  .mat-icon-button:hover .mat-button-focus-overlay {
+    opacity: 0.04;
+  }
+}
+
+.mnj-color-panel-spacer {
+  flex: 1 1 auto;
+}
+
+.mnj-color-panel-picker-button {
+  min-width: 0;
+}
+
+.mnj-color-panel-arrow {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: $mnj-color-panel-arrow-size solid transparent;
+  border-right: $mnj-color-panel-arrow-size solid transparent;
+  border-top-width: $mnj-color-panel-arrow-size;
+  border-top-style: solid;
+  margin: 0 0 0 $mnj-color-panel-arrow-size;
+  vertical-align: middle;
+
+  &.mnj-color-panel-invert {
+    transform: rotate(180deg);
+  }
+
+  [dir='rtl'] & {
+    margin: 0 $mnj-color-panel-arrow-size 0 0;
+  }
+}
+
+.mnj-color-panel-previous-button,
+.mnj-color-panel-next-button {
+  position: relative;
+
+  &::after {
+    @include mat-fill;
+    content: '';
+    margin: $mnj-color-panel-prev-next-icon-margin;
+    border: 0 solid currentColor;
+    border-top-width: $mnj-color-panel-prev-next-icon-border-width;
+  }
+
+  [dir='rtl'] & {
+    transform: rotate(180deg);
+  }
+}
+
+.mnj-color-panel-previous-button::after {
+  border-left-width: $mnj-color-panel-prev-next-icon-border-width;
+  transform: $mnj-color-panel-prev-icon-transform;
+}
+
+.mnj-color-panel-next-button::after {
+  border-right-width: $mnj-color-panel-prev-next-icon-border-width;
+  transform: $mnj-color-panel-next-icon-transform;
+}

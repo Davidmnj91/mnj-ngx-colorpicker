@@ -1,0 +1,11 @@
+%common-view {
+  .controls-container {
+    align-items: center;
+    display: flex;
+
+    &--input {
+      margin-left: 15px;
+      flex: 1;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+<mnj-color-panel-header cdkFocusInitial></mnj-color-panel-header>
+<div class="mnj-color-panel-content" [ngSwitch]="currentView" cdkMonitorSubtreeFocus tabindex="-1">
+  <mnj-chrome-picker-view
+    *ngSwitchCase="'picker'"
+    [(activeColor)]="activeColor"
+    [selected]="selected"
+    [showAlpha]="showAlpha"
+  >
+  </mnj-chrome-picker-view>
+  <mnj-armonies-picker-view *ngSwitchCase="'armonies'" [(activeColor)]="activeColor" [selected]="selected">
+  </mnj-armonies-picker-view>
+  <mnj-palette-picker-view
+    *ngSwitchCase="'palette'"
+    [(activeColor)]="activeColor"
+    [palette]="palette"
+    [selected]="selected"
+  >
+  </mnj-palette-picker-view>
+  <mnj-scan-picker-view *ngSwitchCase="'scan'" [(activeColor)]="activeColor" [selected]="selected">
+  </mnj-scan-picker-view>
+</div>
+<div class="mnj-color-panel-footer">
+  <button mat-button [color]="color" (click)="_selectColor()">Save</button>
+</div>

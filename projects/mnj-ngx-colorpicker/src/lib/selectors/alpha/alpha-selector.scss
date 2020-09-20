@@ -1,0 +1,11 @@
+@import '../selector-common';
+
+.mnj-alpha-selector {
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAI0lEQVQoU2PcvXv3TAYk4Orqmo7MZ6SDAmT7QGx0KxlprwAAw9kbMStVZ6AAAAAASUVORK5CYII=')
+    repeat left center;
+
+  &__gradient {
+    height: 100%;
+    border-radius: $base-container-border-radius;
+  }
+}

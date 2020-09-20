@@ -1,0 +1,35 @@
+<div class="mnj-color-panel-header">
+  <div class="mnj-color-panel-controls">
+    <button
+      mat-button
+      type="button"
+      class="mnj-color-panel-picker-button"
+      (click)="nextClicked()"
+      [attr.aria-label]="pickerViewButtonLabel"
+      cdkAriaLive="polite"
+    >
+      {{pickerButtonText}}
+      <div class="mnj-color-panel-arrow" [class.mnj-color-panel-invert]="colorPanel.currentView === 'scan'"></div>
+    </button>
+
+    <div class="mnj-color-panel-spacer"></div>
+
+    <button
+      mat-icon-button
+      type="button"
+      class="mnj-color-panel-previous-button"
+      [disabled]="!previousEnabled()"
+      (click)="previousClicked()"
+      [attr.aria-label]="prevButtonLabel"
+    ></button>
+
+    <button
+      mat-icon-button
+      type="button"
+      class="mnj-color-panel-next-button"
+      [disabled]="!nextEnabled()"
+      (click)="nextClicked()"
+      [attr.aria-label]="nextButtonLabel"
+    ></button>
+  </div>
+</div>
