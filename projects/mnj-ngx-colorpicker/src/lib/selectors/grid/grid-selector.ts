@@ -81,7 +81,7 @@ export class MnjGridSelector implements AfterViewInit {
 
   grid: PaletteColor[] = [];
 
-  private _selectedIndex: number;
+  _selectedIndex: number;
 
   cssColor(color: Color) {
     return this.colorAdapter.toRgbString(color);
@@ -113,12 +113,12 @@ export class MnjGridSelector implements AfterViewInit {
     private _changeDetectorRef: ChangeDetectorRef
   ) {}
 
-  ngAfterViewInit() {
+  ngAfterViewInit(): void {
     this._calculateCellSize();
     this._changeDetectorRef.markForCheck();
   }
 
-  _buildPalette() {
+  _buildPalette(): void {
     if (this.paletteGeneratorFn && this.color) {
       this.grid = this.paletteGeneratorFn(this.color);
       this._selectedIndex = this.grid.findIndex((cell) => cell.active);
@@ -129,7 +129,7 @@ export class MnjGridSelector implements AfterViewInit {
     }
   }
 
-  _calculateCellSize() {
+  _calculateCellSize(): void {
     if (this._elementRef) {
       const { width } = this._elementRef.nativeElement.getBoundingClientRect();
       const cells = this.columns + this.columns * 0.25 + 1; // Columns per row + (Columns-1/2) spaces in each size of each Column
@@ -141,12 +141,15 @@ export class MnjGridSelector implements AfterViewInit {
     }
   }
 
-  selectColor(shade: PaletteColor) {
-    const { color } = shade;
+  selectColor(index: number): void {
+    const { color } = this.grid[index];
+    this.color = color;
+    // Manually set due to duplicates in some palettes like CSS Colors
+    this._selectedIndex = index;
     this.colorSelected.emit(color);
   }
 
-  _handleKeydownEvent(event: KeyboardEvent) {
+  _handleKeydownEvent(event: KeyboardEvent): void {
     const grid = this.grid;
     const oldActiveIndex = this._selectedIndex;
     let activeIndex = oldActiveIndex;
@@ -174,7 +177,7 @@ export class MnjGridSelector implements AfterViewInit {
         break;
       case SPACE:
         event.preventDefault();
-        this.selectColor(grid[activeIndex]);
+        this.selectColor(activeIndex);
         return;
       default:
         return;

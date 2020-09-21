@@ -41,7 +41,7 @@ export function fromRgb({ red, green, blue }: RGB, alpha: number = 1): Color {
 }
 
 /** Builds color object from Hue, Saturation, Lightness values */
-export function fromHsl({ hue, saturation: saturation, lightness }: HSL, alpha: number = 1): Color {
+export function fromHsl({ hue, saturation, lightness }: HSL, alpha: number = 1): Color {
   const coercedHue = clamp(0, 359, hue);
   const coercedSat = clamp(0, 100, saturation);
   const coercedLightness = clamp(0, 100, lightness);
@@ -155,7 +155,7 @@ export function fromHex(hex: string): Color {
   };
 }
 
-export function parseString(colorString: string): Color | null {
+export function fromString(colorString: string): Color | null {
   // Regex to extract values inside parenthesis
   const extractColorValuesRegex = /\((.*)\)/;
 
@@ -283,6 +283,12 @@ export function saturate(amount: number, color: Color): Color {
   return fromHsl({ hue, saturation: clamp(0, 100, newSat), lightness });
 }
 
+/**
+ * Adds lightness to the color.
+ * Amount is counted as a value betweeen -1 and 1, but accepts values between -100 and 100
+ * @param amount The number of lightness to add
+ * @param color The color to be modified
+ */
 export function shade(amount: number, color: Color): Color {
   amount = coercePercent(amount) * 100;
 
@@ -293,9 +299,9 @@ export function shade(amount: number, color: Color): Color {
 }
 
 /** Calculates the shades of a given color from 5% to 90% of darkness */
-export function calculateShades(color: Color): Array<{ title: string; color: Color; active: boolean }> {
+export function calculateShades(color: Color): PaletteColor[] {
   const colorShade = getColorShade(color);
-  const shades: Array<{ title: string; color: Color; active: boolean }> = [];
+  const shades: PaletteColor[] = [];
 
   const amounts = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900];
   let i = 0;
@@ -374,7 +380,8 @@ export function spinColor(deg: number, color: Color): Color {
   return fromHsl({ hue: rotatedHue, saturation, lightness });
 }
 
-export function getColorShade(color: Color) {
+/** Returns the amount of darkness of a given color in a scale of [50, 100, 200, ..., 900] */
+export function getColorShade(color: Color): number {
   const { lightness } = color;
   let colorShade = 100 - lightness;
   if (colorShade <= 5) {

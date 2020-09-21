@@ -345,7 +345,7 @@ export class MnjColorpicker implements OnDestroy {
     this._scrollStrategy = scrollStrategy;
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     this._destroyPopup();
     this.close();
     this._inputStateChanges.unsubscribe();
@@ -471,7 +471,7 @@ export class MnjColorpicker implements OnDestroy {
   }
 
   /** Forwards relevant values from the colorpicker to the colorpicker content inside the overlay. */
-  protected _forwardContentValues(instance: MnjColorpickerContent) {
+  protected _forwardContentValues(instance: MnjColorpickerContent): void {
     instance.colorpicker = this;
     instance.color = this.color;
   }
@@ -517,7 +517,7 @@ export class MnjColorpicker implements OnDestroy {
   }
 
   /** Sets the positions of the colorpicker in dropdown mode based on the current configuration. */
-  private _setConnectedPositions(strategy: FlexibleConnectedPositionStrategy) {
+  private _setConnectedPositions(strategy: FlexibleConnectedPositionStrategy): FlexibleConnectedPositionStrategy {
     const primaryX = this.xPosition === 'end' ? 'end' : 'start';
     const secondaryX = primaryX === 'start' ? 'end' : 'start';
     const primaryY = this.yPosition === 'above' ? 'bottom' : 'top';
@@ -551,7 +551,7 @@ export class MnjColorpicker implements OnDestroy {
     ]);
   }
 
-  private _updatePopupPositions() {
+  private _updatePopupPositions(): void {
     if (this._popupRef) {
       this._setConnectedPositions(this._popupRef.getConfig().positionStrategy as FlexibleConnectedPositionStrategy);
 
@@ -562,7 +562,7 @@ export class MnjColorpicker implements OnDestroy {
   }
 
   /** Destroys the current popup overlay. */
-  private _destroyPopup() {
+  private _destroyPopup(): void {
     if (this._popupRef) {
       this._popupRef.dispose();
       this._popupRef = this._popupComponentRef = null;

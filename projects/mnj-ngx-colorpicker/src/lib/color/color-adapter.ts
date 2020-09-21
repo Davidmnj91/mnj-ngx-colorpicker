@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Color, parseString } from './color';
+import { Color, fromString } from './color';
 import { rgbToCmyk, rgbToHwb } from './color-conversions';
 import { ColorFormat } from './color-spaces';
 
@@ -24,7 +24,7 @@ export class ColorAdapter {
    * @param colorString literal to be converted to color
    */
   parse(colorString: string): Color {
-    return parseString(colorString);
+    return fromString(colorString);
   }
 
   /**
@@ -36,7 +36,7 @@ export class ColorAdapter {
       if (!value) {
         return null;
       }
-      return parseString(value);
+      return fromString(value);
     }
   }
 

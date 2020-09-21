@@ -14,9 +14,14 @@
   width: 100%;
 
   &__nav {
+    align-items: center;
     display: flex;
     flex-flow: row wrap;
     flex: 1 0 100%;
+
+    &--title {
+      font-size: 400 16px/28px;
+    }
 
     &--spacer {
       flex: 1 0 auto;

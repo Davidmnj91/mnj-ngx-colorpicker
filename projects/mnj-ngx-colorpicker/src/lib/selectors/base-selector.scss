@@ -38,6 +38,7 @@
     &::after {
       border: 1px solid currentColor;
       border-radius: 100%;
+      box-sizing: border-box;
       content: '';
       height: 100%;
       left: 0;
