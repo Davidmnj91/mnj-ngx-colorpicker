@@ -2,7 +2,7 @@ import { OverlayContainer } from '@angular/cdk/overlay';
 import { DOCUMENT } from '@angular/common';
 import { AfterViewInit, Component, Inject } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { ColorFormat, fromHsl, PaletteColor, parseString } from 'mnj-ngx-colorpicker';
+import { ColorFormat, fromHsl, PaletteColor, fromString } from 'mnj-ngx-colorpicker';
 
 @Component({
   selector: 'app-root',
@@ -20,7 +20,7 @@ export class AppComponent implements AfterViewInit {
   customPaletteControl = new FormControl(false);
   touchUiControl = new FormControl(false);
   disabledControl = new FormControl(false);
-  startColorControl = new FormControl(parseString('black'));
+  startColorControl = new FormControl(fromString('black'));
   colorControl = new FormControl();
 
   colorpickerForm = new FormGroup({
