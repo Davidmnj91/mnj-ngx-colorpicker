@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\david\Documents\Projects\mnj-ngx-colorpicker\projects\app\src\polyfills.ts */"hN/g");
+module.exports = __webpack_require__(/*! /home/runner/work/mnj-ngx-colorpicker/mnj-ngx-colorpicker/projects/app/src/polyfills.ts */"hN/g");
 
 
 /***/ }),
@@ -84,9 +84,9 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ "nf2o":
-/*!*********************************************************************************************************!*\
-  !*** C:/Users/david/Documents/Projects/mnj-ngx-colorpicker/node_modules/zone.js/dist/zone-evergreen.js ***!
-  \*********************************************************************************************************/
+/*!*************************************************************************************************************!*\
+  !*** /home/runner/work/mnj-ngx-colorpicker/mnj-ngx-colorpicker/node_modules/zone.js/dist/zone-evergreen.js ***!
+  \*************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 

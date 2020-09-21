@@ -30,9 +30,9 @@ module.exports = content.locals || {};
 /***/ }),
 
 /***/ "+Lub":
-/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** C:/Users/david/Documents/Projects/mnj-ngx-colorpicker/node_modules/css-loader/dist/cjs.js??ref--13-1!C:/Users/david/Documents/Projects/mnj-ngx-colorpicker/node_modules/postcss-loader/src??embedded!C:/Users/david/Documents/Projects/mnj-ngx-colorpicker/node_modules/resolve-url-loader??ref--13-3!C:/Users/david/Documents/Projects/mnj-ngx-colorpicker/node_modules/sass-loader/dist/cjs.js??ref--13-4!./src/assets/theme-light.scss ***!
-  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** /home/runner/work/mnj-ngx-colorpicker/mnj-ngx-colorpicker/node_modules/css-loader/dist/cjs.js??ref--13-1!/home/runner/work/mnj-ngx-colorpicker/mnj-ngx-colorpicker/node_modules/postcss-loader/src??embedded!/home/runner/work/mnj-ngx-colorpicker/mnj-ngx-colorpicker/node_modules/resolve-url-loader??ref--13-3!/home/runner/work/mnj-ngx-colorpicker/mnj-ngx-colorpicker/node_modules/sass-loader/dist/cjs.js??ref--13-4!./src/assets/theme-light.scss ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -58,9 +58,9 @@ ___CSS_LOADER_EXPORT___.push([module.i, "/* Colors for the ripple elements.*/\n/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\david\Documents\Projects\mnj-ngx-colorpicker\projects\app\src\styles.scss */"+EN/");
-__webpack_require__(/*! C:\Users\david\Documents\Projects\mnj-ngx-colorpicker\projects\app\src\assets\theme-light.scss */"53uy");
-module.exports = __webpack_require__(/*! C:\Users\david\Documents\Projects\mnj-ngx-colorpicker\projects\app\src\assets\theme-dark.scss */"vsK6");
+__webpack_require__(/*! /home/runner/work/mnj-ngx-colorpicker/mnj-ngx-colorpicker/projects/app/src/styles.scss */"+EN/");
+__webpack_require__(/*! /home/runner/work/mnj-ngx-colorpicker/mnj-ngx-colorpicker/projects/app/src/assets/theme-light.scss */"53uy");
+module.exports = __webpack_require__(/*! /home/runner/work/mnj-ngx-colorpicker/mnj-ngx-colorpicker/projects/app/src/assets/theme-dark.scss */"vsK6");
 
 
 /***/ }),
@@ -95,9 +95,9 @@ module.exports = content.locals || {};
 /***/ }),
 
 /***/ "PBB4":
-/*!*********************************************************************************************************!*\
-  !*** C:/Users/david/Documents/Projects/mnj-ngx-colorpicker/node_modules/css-loader/dist/runtime/api.js ***!
-  \*********************************************************************************************************/
+/*!*************************************************************************************************************!*\
+  !*** /home/runner/work/mnj-ngx-colorpicker/mnj-ngx-colorpicker/node_modules/css-loader/dist/runtime/api.js ***!
+  \*************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -200,9 +200,9 @@ function toComment(sourceMap) {
 /***/ }),
 
 /***/ "TSJu":
-/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** C:/Users/david/Documents/Projects/mnj-ngx-colorpicker/node_modules/css-loader/dist/cjs.js??ref--13-1!C:/Users/david/Documents/Projects/mnj-ngx-colorpicker/node_modules/postcss-loader/src??embedded!C:/Users/david/Documents/Projects/mnj-ngx-colorpicker/node_modules/resolve-url-loader??ref--13-3!C:/Users/david/Documents/Projects/mnj-ngx-colorpicker/node_modules/sass-loader/dist/cjs.js??ref--13-4!./src/styles.scss ***!
-  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** /home/runner/work/mnj-ngx-colorpicker/mnj-ngx-colorpicker/node_modules/css-loader/dist/cjs.js??ref--13-1!/home/runner/work/mnj-ngx-colorpicker/mnj-ngx-colorpicker/node_modules/postcss-loader/src??embedded!/home/runner/work/mnj-ngx-colorpicker/mnj-ngx-colorpicker/node_modules/resolve-url-loader??ref--13-3!/home/runner/work/mnj-ngx-colorpicker/mnj-ngx-colorpicker/node_modules/sass-loader/dist/cjs.js??ref--13-4!./src/styles.scss ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -222,9 +222,9 @@ ___CSS_LOADER_EXPORT___.push([module.i, "@font-face {\n  font-family: 'Material 
 /***/ }),
 
 /***/ "nGFE":
-/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** C:/Users/david/Documents/Projects/mnj-ngx-colorpicker/node_modules/css-loader/dist/cjs.js??ref--13-1!C:/Users/david/Documents/Projects/mnj-ngx-colorpicker/node_modules/postcss-loader/src??embedded!C:/Users/david/Documents/Projects/mnj-ngx-colorpicker/node_modules/resolve-url-loader??ref--13-3!C:/Users/david/Documents/Projects/mnj-ngx-colorpicker/node_modules/sass-loader/dist/cjs.js??ref--13-4!./src/assets/theme-dark.scss ***!
-  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** /home/runner/work/mnj-ngx-colorpicker/mnj-ngx-colorpicker/node_modules/css-loader/dist/cjs.js??ref--13-1!/home/runner/work/mnj-ngx-colorpicker/mnj-ngx-colorpicker/node_modules/postcss-loader/src??embedded!/home/runner/work/mnj-ngx-colorpicker/mnj-ngx-colorpicker/node_modules/resolve-url-loader??ref--13-3!/home/runner/work/mnj-ngx-colorpicker/mnj-ngx-colorpicker/node_modules/sass-loader/dist/cjs.js??ref--13-4!./src/assets/theme-dark.scss ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -244,9 +244,9 @@ ___CSS_LOADER_EXPORT___.push([module.i, "/* Colors for the ripple elements.*/\n/
 /***/ }),
 
 /***/ "vB0K":
-/*!********************************************************************************************************************************!*\
-  !*** C:/Users/david/Documents/Projects/mnj-ngx-colorpicker/node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js ***!
-  \********************************************************************************************************************************/
+/*!************************************************************************************************************************************!*\
+  !*** /home/runner/work/mnj-ngx-colorpicker/mnj-ngx-colorpicker/node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js ***!
+  \************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
