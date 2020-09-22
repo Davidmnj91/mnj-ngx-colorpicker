@@ -1,8 +1,9 @@
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { DOCUMENT } from '@angular/common';
 import { AfterViewInit, Component, Inject } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { ColorFormat, fromHsl, PaletteColor, fromString } from 'mnj-ngx-colorpicker';
+import { ColorFormat, fromHsl, fromString, PaletteColor } from 'mnj-ngx-colorpicker';
 
 @Component({
   selector: 'app-root',
@@ -46,8 +47,17 @@ export class AppComponent implements AfterViewInit {
 
   private _theme: 'light-theme' | 'dark-theme';
 
-  constructor(@Inject(DOCUMENT) private document: Document, private _overlayContainer: OverlayContainer) {
+  constructor(
+    @Inject(DOCUMENT) private document: Document,
+    private _overlayContainer: OverlayContainer,
+    private _breakpointObserver: BreakpointObserver
+  ) {
     this.changePalette();
+    this._breakpointObserver
+      .observe([Breakpoints.Handset, Breakpoints.Small, Breakpoints.XSmall])
+      .subscribe((result) => {
+        this.touchUiControl.setValue(result.matches);
+      });
   }
 
   ngAfterViewInit(): void {
