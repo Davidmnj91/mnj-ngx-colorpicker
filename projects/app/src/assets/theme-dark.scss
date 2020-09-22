@@ -1,10 +1,10 @@
 @import '~@angular/material/theming';
-@import '../../../../dist/mnj-ngx-colorpicker/colorpicker.theme.scss';
+@import '../../../../dist/mnj-ngx-colorpicker/colorpicker-theme.scss';
 
 @include mat-core();
 
-$candy-app-primary: mat-palette($mat-indigo);
-$candy-app-accent: mat-palette($mat-pink, A200, A100, A400);
+$candy-app-primary: mat-palette($mat-purple);
+$candy-app-accent: mat-palette($mat-green, A200, A100, A400);
 
 $candy-app-warn: mat-palette($mat-red);
 

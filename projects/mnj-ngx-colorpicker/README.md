@@ -40,7 +40,7 @@ import { MnjColorPickerModule } from 'mnj-ngx-color-picker';
 
 ```scss
 @import '~@angular/material/theming';
-@import '~mnj-ngx-colorpicker/colorpicker.theme.scss';
+@import '~mnj-ngx-colorpicker/colorpicker-theme.scss';
 
 @include mat-core();
 
