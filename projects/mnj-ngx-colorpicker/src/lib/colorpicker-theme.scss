@@ -1,7 +1,7 @@
 @import '~@angular/material/core/style/elevation';
 @import '~@angular/material/core/theming/palette';
 @import '~@angular/material/core/theming/theming';
-@import '~@angular/material/core/theming/check-duplicate-styles';
+@import '~@angular/material/core/style/private';
 @import '~@angular/material/core/typography/typography-utils';
 
 $mnj-colorpicker-selected-fade-amount: 0.6;
@@ -104,7 +104,7 @@ $mnj-color-panel-body-font-size: 13px !default;
   }
 
   .mnj-colorpicker-content {
-    @include _mat-theme-elevation(4, $config);
+    @include mat-private-theme-elevation(4, $config);
     background-color: mat-color($background, card);
     color: mat-color($foreground, text);
 
@@ -124,7 +124,7 @@ $mnj-color-panel-body-font-size: 13px !default;
   }
 
   .mnj-colorpicker-content-touch {
-    @include _mat-theme-elevation(0, $config);
+    @include mat-private-theme-elevation(0, $config);
   }
 
   .mnj-colorpicker-toggle-active {
@@ -163,8 +163,8 @@ $mnj-color-panel-body-font-size: 13px !default;
 }
 
 @mixin mnj-colorpicker-theme($theme-or-color-config) {
-  $theme: _mat-legacy-get-theme($theme-or-color-config);
-  @include _mat-check-duplicate-theme-styles($theme, 'mnj-colorpicker') {
+  $theme: mat-private-legacy-get-theme($theme-or-color-config);
+  @include mat-private-check-duplicate-theme-styles($theme, 'mnj-colorpicker') {
     $color: mat-get-color-config($theme);
     $density: mat-get-density-config($theme);
     $typography: mat-get-typography-config($theme);
