@@ -1,27 +1,27 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["polyfills"],{
 
 /***/ 1:
-/*!********************************!*\
-  !*** multi ./src/polyfills.ts ***!
-  \********************************/
+/*!*********************************************!*\
+  !*** multi ./projects/app/src/polyfills.ts ***!
+  \*********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/runner/work/mnj-ngx-colorpicker/mnj-ngx-colorpicker/projects/app/src/polyfills.ts */"hN/g");
+module.exports = __webpack_require__(/*! /home/runner/work/mnj-ngx-colorpicker/mnj-ngx-colorpicker/projects/app/src/polyfills.ts */"FAZb");
 
 
 /***/ }),
 
-/***/ "hN/g":
-/*!**************************!*\
-  !*** ./src/polyfills.ts ***!
-  \**************************/
+/***/ "FAZb":
+/*!***************************************!*\
+  !*** ./projects/app/src/polyfills.ts ***!
+  \***************************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var zone_js_dist_zone__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! zone.js/dist/zone */ "nf2o");
+/* harmony import */ var zone_js_dist_zone__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! zone.js/dist/zone */ "pDpN");
 /* harmony import */ var zone_js_dist_zone__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(zone_js_dist_zone__WEBPACK_IMPORTED_MODULE_0__);
 /**
  * This file includes polyfills needed by Angular and is loaded before the app.
@@ -83,10 +83,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "nf2o":
-/*!*************************************************************************************************************!*\
-  !*** /home/runner/work/mnj-ngx-colorpicker/mnj-ngx-colorpicker/node_modules/zone.js/dist/zone-evergreen.js ***!
-  \*************************************************************************************************************/
+/***/ "pDpN":
+/*!*****************************************************!*\
+  !*** ./node_modules/zone.js/dist/zone-evergreen.js ***!
+  \*****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
