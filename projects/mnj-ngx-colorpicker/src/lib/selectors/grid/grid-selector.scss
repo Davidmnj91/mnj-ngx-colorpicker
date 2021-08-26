@@ -1,13 +1,20 @@
-@import '../selector-common';
+@use 'sass:color';
+@use 'sass:map';
+@use 'sass:math';
+@use 'sass:meta';
+@use '../selector-common';
 
 $mnj-grid-selector-cell-size: 24px;
 $mnj-grid-selector-scale: 1.5;
 // Necesary space for the cells to not being cut by container when scaled;
-$mnj-grid-selector-space: (($mnj-grid-selector-cell-size * $mnj-grid-selector-scale) - $mnj-grid-selector-cell-size) / 2;
+$mnj-grid-selector-space: math.div(
+  $mnj-grid-selector-cell-size * $mnj-grid-selector-scale - $mnj-grid-selector-cell-size,
+  2
+);
 
 .mnj-grid-selector {
   display: block;
-  margin: $base-container-margin-top 0 $base-container-margin-bottom;
+  margin: selector-common.$base-container-margin-top 0 selector-common.$base-container-margin-bottom;
 
   &__row {
     display: grid;

@@ -77,7 +77,7 @@
         </section>
         <section class="example-section">
           <h3 class="example-h4">Result</h3>
-          <mat-form-field>
+          <mat-form-field [color]="themeColorControl.value">
             <mat-label>Pick a Color:</mat-label>
             <input matInput [formControl]="colorControl" [mnjColorpicker]="defaultPicker" />
             <mnj-colorpicker-toggle matSuffix [for]="defaultPicker"></mnj-colorpicker-toggle>

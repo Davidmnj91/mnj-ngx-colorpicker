@@ -1,11 +1,11 @@
-@import 'selector-common';
+@use 'selector-common';
 
 .mnj-colorpicker-selector {
-  border-radius: $base-container-border-radius;
+  border-radius: selector-common.$base-container-border-radius;
   cursor: pointer;
   display: block;
-  height: $base-container-height;
-  margin: $base-container-margin-top 0 $base-container-margin-bottom;
+  height: selector-common.$base-container-height;
+  margin: selector-common.$base-container-margin-top 0 selector-common.$base-container-margin-bottom;
   position: relative;
 
   &:focus {
@@ -17,11 +17,11 @@
   border: 2px solid currentColor;
   border-radius: 100%;
   box-sizing: border-box;
-  height: $base-container-thumb-size;
+  height: selector-common.$base-container-thumb-size;
   pointer-events: none;
   position: absolute;
   transform: translate(-50%, -50%);
-  width: $base-container-thumb-size;
+  width: selector-common.$base-container-thumb-size;
 
   .mnj-colorpicker-selector__thumb__inner {
     border: 2px solid currentColor;

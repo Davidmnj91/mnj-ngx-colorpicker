@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input, ViewEncapsulation } from '@angular/core';
 import { calculateShades, Color } from '../../color/color';
 import { ColorAdapter } from '../../color/color-adapter';
+import { ColorFormat } from '../../color/color-spaces';
 import { BaseColorpickerView, ColorPickerView } from '../colorpicker-view';
 
 @Component({
@@ -17,6 +18,8 @@ import { BaseColorpickerView, ColorPickerView } from '../colorpicker-view';
 })
 export class MnjChromePickerView extends BaseColorpickerView {
   @Input() showAlpha: boolean;
+
+  @Input() displayFormat: ColorFormat;
 
   colorShadesFn = (color: Color) => {
     return calculateShades(color);

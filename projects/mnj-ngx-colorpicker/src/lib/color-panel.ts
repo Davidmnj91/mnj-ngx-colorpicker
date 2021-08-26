@@ -19,6 +19,7 @@ import { Subject, Subscription } from 'rxjs';
 import { Color, PaletteColor } from './color/color';
 import { ColorAdapter } from './color/color-adapter';
 import { MnjColorConfig, MNJ_COLOR_CONFIG_PROVIDER } from './color/color-config';
+import { ColorFormat } from './color/color-spaces';
 import { MnjColorpickerIntl } from './colorpicker-intl';
 import { ColorPickerView } from './views';
 
@@ -177,6 +178,17 @@ export class MnjColorPanel implements AfterContentInit, OnDestroy {
     this._startColor = this._colorAdapter.getValidColorOrNull(value);
   }
   private _startColor: Color | null;
+
+  @Input()
+  get displayFormat(): ColorFormat {
+    return this._displayFormat;
+  }
+  set displayFormat(value: ColorFormat) {
+    if (value !== this._displayFormat) {
+      this._displayFormat = value;
+    }
+  }
+  private _displayFormat: ColorFormat;
 
   @Input()
   get palette(): PaletteColor[] {
