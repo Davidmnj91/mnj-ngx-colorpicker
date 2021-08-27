@@ -1,3 +1,4 @@
+@use '~@angular/material' as mat;
 @use '~@angular/material/core/style/elevation';
 @use '~@angular/material/core/theming/palette';
 @use '~@angular/material/core/theming/theming';
@@ -11,7 +12,7 @@ $mnj-color-panel-body-font-size: 13px !default;
 @mixin _mnj-colorpicker-color($palette) {
   .mnj-input-selector {
     .color-input:focus {
-      border-bottom-color: mat-color($palette);
+      border-bottom-color: mat.get-color-from-palette($palette);
     }
   }
 }
@@ -21,13 +22,13 @@ $mnj-color-panel-body-font-size: 13px !default;
 
   .mnj-armonies-picker-view {
     label {
-      color: mat-color($foreground, text);
+      color: mat.get-color-from-palette($foreground, text);
     }
   }
 
   .mnj-scan-picker-view {
     .upload-control {
-      border-color: mat-color($foreground, icon);
+      border-color: mat.get-color-from-palette($foreground, icon);
     }
   }
 }
@@ -40,7 +41,7 @@ $mnj-color-panel-body-font-size: 13px !default;
     &:focus {
       .mnj-colorpicker-selector__thumb__inner {
         $opacity: 0.2;
-        $color: mat-color($foreground, icon, $opacity);
+        $color: mat.get-color-from-palette($foreground, icon, $opacity);
         $base-container-thumb-inner-focus-shadow: 0 0 0px 8px $color;
 
         box-shadow: $base-container-thumb-inner-focus-shadow;
@@ -50,28 +51,28 @@ $mnj-color-panel-body-font-size: 13px !default;
   .mnj-colorpicker-selector__thumb {
     $opacity: 0.08;
 
-    border-color: mat-color($foreground, text, $opacity);
+    border-color: mat.get-color-from-palette($foreground, text, $opacity);
 
     .mnj-colorpicker-selector__thumb__inner {
-      border-color: mat-color($foreground, text);
+      border-color: mat.get-color-from-palette($foreground, text);
 
       &::after {
-        border-color: mat-color($foreground, text, $opacity);
+        border-color: mat.get-color-from-palette($foreground, text, $opacity);
       }
     }
   }
 
   .mnj-input-selector {
     .color-input {
-      background-color: mat-color($background, card);
-      color: mat-color($foreground, text);
-      border-bottom-color: mat-color($foreground, text);
+      background-color: mat.get-color-from-palette($background, card);
+      color: mat.get-color-from-palette($foreground, text);
+      border-bottom-color: mat.get-color-from-palette($foreground, text);
     }
 
     .switch-buttons--prev,
     .switch-buttons--next {
       svg {
-        fill: mat-color($foreground, text);
+        fill: mat.get-color-from-palette($foreground, text);
       }
     }
   }
@@ -81,10 +82,10 @@ $mnj-color-panel-body-font-size: 13px !default;
   $config: mat-get-color-config($config-or-theme);
   $foreground: map-get($config, foreground);
   $background: map-get($config, background);
-  $disabled-color: mat-color($foreground, disabled-text);
+  $disabled-color: mat.get-color-from-palette($foreground, disabled-text);
 
   .mnj-color-panel-arrow {
-    border-top-color: mat-color($foreground, icon);
+    border-top-color: mat.get-color-from-palette($foreground, icon);
   }
 
   // The prev/next buttons need a bit more specificity to
@@ -92,11 +93,11 @@ $mnj-color-panel-body-font-size: 13px !default;
   .mnj-colorpicker-toggle,
   .mnj-colorpicker-content .mnj-color-panel-next-button,
   .mnj-colorpicker-content .mnj-color-panel-previous-button {
-    color: mat-color($foreground, icon);
+    color: mat.get-color-from-palette($foreground, icon);
   }
 
   .mnj-color-panel-body-label {
-    color: mat-color($foreground, secondary-text);
+    color: mat.get-color-from-palette($foreground, secondary-text);
   }
 
   .mat-form-field-disabled {
@@ -105,8 +106,8 @@ $mnj-color-panel-body-font-size: 13px !default;
 
   .mnj-colorpicker-content {
     @include mat-private-theme-elevation(4, $config);
-    background-color: mat-color($background, card);
-    color: mat-color($foreground, text);
+    background-color: mat.get-color-from-palette($background, card);
+    color: mat.get-color-from-palette($foreground, text);
 
     @include _mnj-color-selector-theme($config);
 
@@ -128,14 +129,14 @@ $mnj-color-panel-body-font-size: 13px !default;
   }
 
   .mnj-colorpicker-toggle-active {
-    color: mat-color(map-get($config, primary), text);
+    color: mat.get-color-from-palette(map-get($config, primary), text);
 
     &.mat-accent {
-      color: mat-color(map-get($config, accent), text);
+      color: mat.get-color-from-palette(map-get($config, accent), text);
     }
 
     &.mat-warn {
-      color: mat-color(map-get($config, warn), text);
+      color: mat.get-color-from-palette(map-get($config, warn), text);
     }
   }
 }
@@ -143,7 +144,7 @@ $mnj-color-panel-body-font-size: 13px !default;
 @mixin mnj-colorpicker-typography($config-or-theme) {
   $config: mat-get-typography-config($config-or-theme);
   .mnj-color-panel {
-    font-family: mat-font-family($config);
+    font-family: mat.font-family($config);
   }
 
   .mnj-color-panel-body {
@@ -153,8 +154,8 @@ $mnj-color-panel-body-font-size: 13px !default;
   .mnj-color-panel-body-label,
   .mnj-color-panel-period-button {
     font: {
-      size: mat-font-size($config, button);
-      weight: mat-font-weight($config, button);
+      size: mat.font-size($config, button);
+      weight: mat.font-weight($config, button);
     }
   }
 }

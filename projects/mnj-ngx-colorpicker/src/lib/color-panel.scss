@@ -82,7 +82,7 @@ $mnj-color-panel-next-icon-transform: translateX(-2px) rotate(45deg);
   position: relative;
 
   &::after {
-    @include mat.mat-fill();
+    @include mat.fill();
     content: '';
     margin: $mnj-color-panel-prev-next-icon-margin;
     border: 0 solid currentColor;
